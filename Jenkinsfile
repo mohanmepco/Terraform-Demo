@@ -19,7 +19,7 @@ pipeline {
         }
         stage('tfsvars create'){
             steps {
-                sh 'sudo cp /home/mganapat/terraform.tfvars ./jenkins/'
+                sh 'sudo cp /home/mganapat/terraform.tfvars ./jenkins/workspace/Terraform-pipeline-Demo/Terraform-Demo'
             }
         }
         stage('terraform init') {
