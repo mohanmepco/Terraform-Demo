@@ -28,6 +28,11 @@ pipeline {
             }
         }
        
+        stage('terraform plan') {
+            steps {
+                sh 'cd /home/build/.jenkins/workspace/Terraform-Demo/Terraform-Demo; terraform plan'
+            }
+        }
         stage('terraform ended') {
             steps {
                 sh 'echo "Ended....!!"'
