@@ -14,17 +14,17 @@ pipeline {
         }
         stage('git clone') {
             steps {
-                sh 'sudo rm -r *;sudo git clone https://github.com/mohanmepco/Terraform-Demo.git'
+                sh ' rm -r *; git clone https://github.com/mohanmepco/Terraform-Demo.git'
             }
         }
         stage('tfsvars create'){
             steps {
-                sh 'sudo cp /home/build/terraform.tfvars /home/build/.jenkins/workspace/Terraform-Demo/Terraform-Demo'
+                sh 'cp /home/build/terraform.tfvars /home/build/.jenkins/workspace/Terraform-Demo/Terraform-Demo'
             }
         }
         stage('terraform init') {
             steps {
-                sh 'sudo /home/build/.jenkins/workspace/Terraform-Demo/Terraform-Demo/terraform init'
+                sh '/home/build/.jenkins/workspace/Terraform-Demo/Terraform-Demo/terraform init'
             }
         }
         stage('terraform plan') {
