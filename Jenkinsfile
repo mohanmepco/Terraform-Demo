@@ -29,7 +29,7 @@ pipeline {
         }
         stage('terraform plan') {
             steps {
-                sh 'ls ./jenkins; sudo /home/build/terraform plan ./jenkins'
+                sh 'terraform plan'
             }
         }
         stage('terraform ended') {
