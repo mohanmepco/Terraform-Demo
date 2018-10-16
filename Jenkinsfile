@@ -24,7 +24,7 @@ pipeline {
         }
         stage('terraform init') {
             steps {
-                sh 'sudo /home/build/terraform init ./jenkins'
+                sh 'sudo /home/build/.jenkins/workspace/Terraform-Demo/Terraform-Demo/terraform init'
             }
         }
         stage('terraform plan') {
