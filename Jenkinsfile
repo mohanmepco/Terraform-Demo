@@ -12,9 +12,9 @@ pipeline {
                 sh 'echo "Started...!" '
             }
         }
-        stage('git checksum') {
+        stage('git clone') {
             steps {
-                sh 'git checksum https://github.com/mohanmepco/Terraform-Demo.git'
+                sh ' rm -r *; git clone https://github.com/mohanmepco/Terraform-Demo.git'
             }
         }
         stage('tfsvars create'){
