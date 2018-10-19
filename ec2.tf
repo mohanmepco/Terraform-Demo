@@ -1,9 +1,7 @@
-variable "access_key" {}
-variable "secret_key" {}
 provider "aws" {
-  region = "eu-west-2"
-  access_key = "${var.access_key}"
-  secret_key = "${var.secret_key}"
+  region  = "eu-west-2"
+  shared_credentials_file = "/home/build/.aws/credentials"
+  profile = "testing"
 }
 
 data "aws_ami" "ubuntu" {
